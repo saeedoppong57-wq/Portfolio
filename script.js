@@ -8,21 +8,22 @@ menuToggle?.addEventListener('click', () => {
     menuToggle?.classList.toggle('open', isOpen);
     menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 });
-const specialties = [
-    { label: "HTML", percent: 95 },
-    { label: "CSS", percent: 90 },
-    { label: "JavaScript", percent: 20 },
+const skills = [
+    { label: "HTML", percent: 92 },
+    { label: "CSS", percent: 87 },
+    { label: "JavaScript", percent: 34 },
     { label: "UI/UX Design", percent: 75 },
+    { label: "Photoshop" , percent: 40 } ,
+    { label: "WordPress" , percent: 20 } ,
     { label: "React", percent: 0 },
     { label: "Node.js", percent: 0 }
 ];
 
-const list = document.getElementById("specialty-list");
+const list = document.getElementById("skills-list");
 
-specialties.forEach(skill => {
+skills.forEach(skill => {
     const li = document.createElement("li");
     li.className = "skill-item";
-
     li.innerHTML = `
         <div class="skill-header">
             <span class="skill-name">${skill.label}</span>
@@ -33,6 +34,27 @@ specialties.forEach(skill => {
             <div class="progress-bar" style="width:${skill.percent}%"></div>
         </div>
     `;
-
     list.appendChild(li);
+});
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 100;
+
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    }
+  });
 });
