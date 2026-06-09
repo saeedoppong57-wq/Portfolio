@@ -428,7 +428,7 @@ textarea{
     padding: 0;
     margin: 50px 0 0 0;
     display: grid;
-    gap: 3rem;
+    gap: 1rem;
 }
 
 @media (min-width: 640px) {
@@ -450,6 +450,7 @@ textarea{
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.75rem;
+    margin-right: 40px;
 }
 .skill-name {
     color: #222;
@@ -461,7 +462,7 @@ textarea{
     font-family: verdana;
 }
 .progress-container {
-    width: 100%;
+    width: 80%;
     height: 6px;
     background: #e5e7eb;
     border-radius: 999px;
