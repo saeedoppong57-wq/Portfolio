@@ -14,9 +14,7 @@ const skills = [
     { label: "JavaScript", percent: 34 },
     { label: "UI/UX Design", percent: 75 },
     { label: "Photoshop" , percent: 40 } ,
-    { label: "WordPress" , percent: 20 } ,
-    { label: "React", percent: 0 },
-    { label: "Node.js", percent: 0 }
+    { label: "WordPress" , percent: 20 } 
 ];
 
 const list = document.getElementById("skills-list");
