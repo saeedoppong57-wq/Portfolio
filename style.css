@@ -519,4 +519,5 @@ textarea{
     height: 100%;
     object-fit: contain;
     border-radius: 10px;
+    border: 1px solid #dbdbdb;
 }
