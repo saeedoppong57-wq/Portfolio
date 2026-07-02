@@ -255,6 +255,13 @@ s{
 }
 section{
     padding: 100px 0 70px 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+section.lazy-loaded{
+    opacity: 1;
+    transform: translateY(0);
 }
 .navi{
     font-size: 14px;
@@ -264,6 +271,8 @@ section{
 }
 .home{
     height: 100vh;
+    opacity: 1;
+    transform: none;
 }
 .home div{
     margin-left: 100px;
@@ -317,6 +326,16 @@ section{
     border: 0.1px solid #dbdbdb;
     border-radius: 15px;
     padding-top: 25px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+}
+.cont-1.lazy-loaded,
+.cont-2.lazy-loaded,
+.cont-3.lazy-loaded,
+.cont-4.lazy-loaded{
+    opacity: 1;
+    transform: translateY(0);
 }
 .cont-1:hover,
 .cont-2:hover,
@@ -324,7 +343,7 @@ section{
 .cont-4:hover,
 .cont:hover{
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    transition: box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     border: 1px solid rgb(0, 119, 255);
 }
 .con{
@@ -339,6 +358,13 @@ section{
     border: 0.1px solid #dbdbdb;
     border-radius: 15px;
     padding: 25px 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+}
+.cont.lazy-loaded{
+    opacity: 1;
+    transform: translateY(0);
 }
 .job{
     font-size: 15px;
@@ -443,6 +469,13 @@ textarea{
 }
 .skill-item {
     padding-top: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.skill-item.lazy-loaded{
+    opacity: 1;
+    transform: translateY(0);
 }
 .skill-header {
     display: flex;
@@ -508,10 +541,16 @@ textarea{
     border: 0.1px solid #dbdbdb;
     border-radius: 15px;
     padding: 15px 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
+.link-project.lazy-loaded,
 .link-project:hover{
+    opacity: 1;
+    transform: translateY(0);
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    transition: box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     border: 1px solid rgb(0, 119, 255);
 }
 .project-img{
@@ -520,4 +559,11 @@ textarea{
     object-fit: contain;
     border-radius: 10px;
     border: 1px solid #dbdbdb;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.project-img.loaded{
+    opacity: 1;
+    transform: translateY(0);
 }
