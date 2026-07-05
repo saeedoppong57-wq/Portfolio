@@ -51,8 +51,6 @@ const contObserver = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 document.querySelectorAll('.cont, .link-project, .cont-1, .cont-2, .cont-3, .cont-4').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
     contObserver.observe(el);
 });
 const skills = [
@@ -93,6 +91,33 @@ const skillObserver = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 skillItems.forEach(item => skillObserver.observe(item));
+
+const filterButtons = document.querySelectorAll('.project-button p');
+const projectItems = document.querySelectorAll('.containers > div');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        const filter = button.classList[0];
+        projectItems.forEach(item => {
+            if (filter === 'all') {
+                item.style.display = 'block';
+            } else {
+                const showMap = { web: 'web-design', fig: 'figma' };
+                const targetClass = showMap[filter];
+                item.style.display = item.classList.contains(targetClass) ? 'block' : 'none';
+            }
+        });
+    });
+});
+
+const allButton = document.querySelector('.project-button .all');
+if (allButton) {
+    allButton.click();
+}
+
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav");
 
@@ -115,3 +140,18 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+const themeToggle = document.getElementById('themeToggle');
+if (themeToggle) {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+    } else {
+        document.documentElement.classList.add('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+}
