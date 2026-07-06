@@ -54,12 +54,12 @@ document.querySelectorAll('.cont, .link-project, .cont-1, .cont-2, .cont-3, .con
     contObserver.observe(el);
 });
 const skills = [
-    { label: "HTML", percent: 92 },
-    { label: "CSS", percent: 87 },
-    { label: "JavaScript", percent: 34 },
-    { label: "UI/UX Design", percent: 75 },
-    { label: "Photoshop" , percent: 40 } ,
-    { label: "WordPress" , percent: 20 } 
+    { label: "HTML", percent: 94 },
+    { label: "CSS", percent: 89 },
+    { label: "JavaScript", percent: 45 },
+    { label: "UI/UX Design", percent: 78 },
+    { label: "Photoshop" , percent: 20 } ,
+    { label: "WordPress" , percent: 10 } 
 ];
 
 const list = document.getElementById("skills-list");
@@ -155,3 +155,27 @@ if (themeToggle) {
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
 }
+const accordionItems = document.querySelectorAll(".accordion-item");
+accordionItems.forEach(item => {
+    const header = item.querySelector(".accordion-header");
+    header.addEventListener("click", () => {
+        // Close every other item
+        accordionItems.forEach(otherItem => {
+            if(otherItem !== item){
+                otherItem.classList.remove("active");
+                otherItem.querySelector(".accordion-content").style.maxHeight = null;
+            }
+        });
+        // Toggle current item
+        item.classList.toggle("active");
+        const content = item.querySelector(".accordion-content");
+        if(item.classList.contains("active")){
+            content.style.maxHeight = content.scrollHeight + "px";
+        }else{
+            content.style.maxHeight = null;
+        }
+    });
+});
+// Open the first item on page load
+const firstContent = document.querySelector(".accordion-item.active .accordion-content");
+firstContent.style.maxHeight = firstContent.scrollHeight + "px";
