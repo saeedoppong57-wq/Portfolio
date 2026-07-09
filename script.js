@@ -1,12 +1,55 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const navMenu = document.querySelector('nav');
 const header = document.querySelector('header');
+const overlay = document.querySelector('.mobile-menu-overlay');
 
-menuToggle?.addEventListener('click', () => {
-    const isOpen = navMenu?.classList.toggle('open');
+const setMenuState = (isOpen) => {
+    navMenu?.classList.toggle('open', isOpen);
     header?.classList.toggle('menu-open', isOpen);
     menuToggle?.classList.toggle('open', isOpen);
-    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    overlay?.classList.toggle('active', isOpen);
+    document.body.classList.toggle('menu-open-body', isOpen);
+    menuToggle?.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+};
+
+menuToggle?.addEventListener('click', () => {
+    const isOpen = !navMenu?.classList.contains('open');
+    setMenuState(isOpen);
+});
+
+overlay?.addEventListener('click', () => {
+    setMenuState(false);
+});
+
+document.querySelectorAll('.nav').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 900) {
+            setMenuState(false);
+        }
+    });
+});
+
+window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        setMenuState(false);
+    }
+});
+
+document.addEventListener('click', (event) => {
+    const isMobile = window.innerWidth <= 900;
+    const isMenuOpen = header?.classList.contains('menu-open');
+    const clickedInsideHeader = header?.contains(event.target);
+    const clickedToggle = menuToggle?.contains(event.target);
+
+    if (isMobile && isMenuOpen && !clickedInsideHeader && !clickedToggle) {
+        setMenuState(false);
+    }
+});
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+        setMenuState(false);
+    }
 });
 
 const observerOptions = {
