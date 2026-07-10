@@ -101,7 +101,7 @@ const skills = [
     { label: "CSS", percent: 89 },
     { label: "JavaScript", percent: 45 },
     { label: "UI/UX Design", percent: 78 },
-    { label: "Photoshop" , percent: 20 } ,
+    { label: "GitHub" , percent: 80 } ,
     { label: "WordPress" , percent: 10 } 
 ];
 

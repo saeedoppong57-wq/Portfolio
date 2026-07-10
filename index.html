@@ -8,7 +8,7 @@
     <title>Abass Oppong Saeed Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" href="/image/saeed-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="image/saeed-logo.png" type="image/x-icon">
 </head>
 <body>
     <div class="mobile-menu-overlay" aria-hidden="true"></div>
@@ -23,7 +23,7 @@
     <header>
         <div class="sidebar-top">
             <div>
-                <img src="/image/saeed pic.png" alt="" class="profile-img" loading="lazy">
+                <img src="/image/saeed pic copy.png" alt="" class="profile-img" loading="lazy">
                 <p class="name">Abass Oppong Saeed</p>
                 <p class="work">Web Developer<br><s> In Accra, Ghana</s></p>
             </div>
@@ -65,7 +65,7 @@
     </header>
     <main>
     <section id="home" class="home">
-        <div class="home-bg" style="background-image: url(/image/home-background.png);">
+        <div class="home-bg" style="background-image: url(image/home-background.png);">
             <div class="overlay"></div>
             <div class="home-content">
                 <p class="prog">I am <br>a Developer</p>
@@ -204,16 +204,16 @@
         <div class="containers">
             <div class="web-design">
                 <div class="link-project">
-                    <img src="/image/Screenshot 2026-06-22 211104.png" alt="Patriotism Website" class="project-img" loading="lazy">
+                    <img src="image/Screenshot 2026-06-22 211104.png" alt="Patriotism Website" class="project-img" loading="lazy">
                     <p class="info">Patriotism campaign website for the youth which talks about preservivg our Ghanaian culture and heritage.</p>
                     <a href="https://patriotism-ghana.netlify.app/" target="_blank"><p class="view">View Project</p></a>
                 </div>
             </div>
             <div class="figma">
                 <div class="link-project">
-                    <img src="/image/food design.png" alt="K-Good Food Website Template" class="project-img" loading="lazy">
+                    <img src="image/food design.png" alt="K-Good Food Website Template" class="project-img" loading="lazy">
                     <p class="info">A food website template designed as practice and as an assignment and for training my skills.</p>
-                    <a href="/image/food website.png"><p class="view">View Project</p></a>
+                    <a href="image/food website.png" target="_blank"><p class="view">View Project</p></a>
                 </div>
             </div>
             <div class="figma">
@@ -232,7 +232,7 @@
             </div>
             <div class="figma">
                 <div class="link-project">
-                    <img src="/image/VRTECH.png" alt="VR-TECH website template" class="project-img" loading="lazy">
+                    <img src="image/VRTECH.png" alt="VR-TECH website template" class="project-img" loading="lazy">
                     <p class="info">VRTECH website template is a website featuring Virtual Reality technology and is specs, shows the future of VR technology.</p>
                     <a href="/image/VRTECH.png" target="_blank"><p class="view">View Project</p></a>
                 </div>
@@ -246,23 +246,23 @@
             </div>
             <div class="web-design">
                 <div class="link-project">
-                    <img src="/image/edanso.png" alt="" class="project-img" loading="lazy">
+                    <img src="/image/edanso.png" alt="Edanso Portfolio" class="project-img" loading="lazy">
                     <p class="info">This a potfolio website developed for a client as a test of my skills and to show my capabilities when given an assignment.</p>
                     <a href="https://klausnight.classm4.com/" target="_blank"><p class="view">View Project</p></a>
                 </div>
             </div>
             <div class="web-design">
                 <div class="link-project">
-                    <img src="/image/portfolio-img.png" alt="" class="project-img" loading="lazy">
+                    <img src="/image/portfolio-img.png" alt="My Portfolio website" class="project-img" loading="lazy">
                     <p class="info">This is my portfolio website built in my journey which showing some of my works and the skill set I have.</p>
                     <a href="https://portfolio-swart-zeta-68.vercel.app/" target="_blank"><p class="view">View Project</p></a>
                 </div>
             </div>
             <div class="figma">
                 <div class="link-project">
-                    <img src="/image/agin-front.png" alt="" class="project-img" loading="lazy">
+                    <img src="/image/agin-front.png" alt="APINY website template" class="project-img" loading="lazy">
                     <p class="info">This is a work given to us to practice and improve our skills in figma design and to see our strenghts and weaknesses.</p>
-                    <a href="/image/agin.png"><p class="view">View Project</p></a>
+                    <a href="/image/agin.png" target="_blank"><p class="view">View Project</p></a>
                 </div>
             </div>
         </div>
@@ -278,7 +278,7 @@
                 </div>
                 <div class="contact-item">
                     <p class="icon"><i class="fa-solid fa-location-dot" style="color: rgb(116, 192, 252);"></i></p>
-                    <p class="item-info">31st Trinity Street, Mempeasem</p>
+                    <p class="item-info">Kotie-Deduako, Kumasi</p>
                 </div>
                 <div class="contact-item">
                     <p class="icon"><i class="fa-solid fa-phone" style="color: rgb(116, 192, 252);"></i></p>
@@ -297,6 +297,30 @@
         </div>
     </section>
     </main>
+    <!-- Use 'inert' instead of 'aria-hidden' when closing/hiding -->
+    <div class="resume-modal" id="resumeModal" role="dialog" aria-modal="true" inert>
+        <div class="resume-modal-bar">
+            <button type="button" class="resume-close" id="resumeClose" aria-label="Close resume">&times;</button>
+            <button type="button" class="resume-download" id="resumeDownload"><i class="fa-solid fa-download"></i> Download PDF</button>
+        </div>
+        <div class="resume-view">
+            <div class="resume-container">
+                <aside class="resume-sidebar">
+                    <div class="resume-profile" id="resume-profile"></div>
+                    <section class="resume-section" id="resume-contact"></section>
+                </aside>
+                <div class="resume-main">
+                    <section class="resume-section" id="resume-summary"></section>
+                    <section class="resume-section" id="resume-skills"></section>
+                    <section class="resume-section" id="resume-projects"></section>
+                    <section class="resume-section" id="resume-experience"></section>
+                    <section class="resume-section" id="resume-education"></section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/resume.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
