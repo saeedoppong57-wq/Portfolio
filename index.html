@@ -65,12 +65,12 @@
     </header>
     <main>
     <section id="home" class="home">
-        <div class="home-bg" style="background-image: url(image/home-background.png);">
+        <div class="home-bg" style="background-image: url(image/home-back.png);">
             <div class="overlay"></div>
             <div class="home-content">
                 <p class="prog">I am <br>a Developer</p>
                 <p class="add">100% html5 css and Javascript</p>
-                <button class="cv-btn">Download CV <i class="fa-solid fa-download"></i></button>
+                <button type="button" class="cv-btn">Download CV <i class="fa-solid fa-download"></i></button>
             </div>
         </div>
     </section>
@@ -213,7 +213,7 @@
                 <div class="link-project">
                     <img src="image/food design.png" alt="K-Good Food Website Template" class="project-img" loading="lazy">
                     <p class="info">A food website template designed as practice and as an assignment and for training my skills.</p>
-                    <a href="image/food website.png" target="_blank"><p class="view">View Project</p></a>
+                    <p class="view"><a href="image/food website.png" target="_blank"></a>View Project</a></p>
                 </div>
             </div>
             <div class="figma">
@@ -297,30 +297,16 @@
         </div>
     </section>
     </main>
-    <!-- Use 'inert' instead of 'aria-hidden' when closing/hiding -->
-    <div class="resume-modal" id="resumeModal" role="dialog" aria-modal="true" inert>
-        <div class="resume-modal-bar">
-            <button type="button" class="resume-close" id="resumeClose" aria-label="Close resume">&times;</button>
-            <button type="button" class="resume-download" id="resumeDownload"><i class="fa-solid fa-download"></i> Download PDF</button>
+    <div class="cv-modal" id="cvModal" role="dialog" aria-modal="true" inert>
+        <div class="cv-modal-bar">
+            <span class="cv-modal-title">Resume</span>
+            <a href="Abass Oppong Saeed CV.pdf" download class="cv-download"><i class="fa-solid fa-download"></i> Download PDF</a>
+            <button type="button" class="cv-close" id="cvClose" aria-label="Close resume">&times;</button>
         </div>
-        <div class="resume-view">
-            <div class="resume-container">
-                <aside class="resume-sidebar">
-                    <div class="resume-profile" id="resume-profile"></div>
-                    <section class="resume-section" id="resume-contact"></section>
-                </aside>
-                <div class="resume-main">
-                    <section class="resume-section" id="resume-summary"></section>
-                    <section class="resume-section" id="resume-skills"></section>
-                    <section class="resume-section" id="resume-projects"></section>
-                    <section class="resume-section" id="resume-experience"></section>
-                    <section class="resume-section" id="resume-education"></section>
-                </div>
-            </div>
+        <div class="cv-view">
+            <embed src="Abass Oppong Saeed CV.pdf" type="application/pdf" class="cv-embed">
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="js/resume.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

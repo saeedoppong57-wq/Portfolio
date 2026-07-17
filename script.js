@@ -222,3 +222,34 @@ accordionItems.forEach(item => {
 // Open the first item on page load
 const firstContent = document.querySelector(".accordion-item.active .accordion-content");
 firstContent.style.maxHeight = firstContent.scrollHeight + "px";
+
+const cvBtn = document.querySelector('.cv-btn');
+const cvModal = document.getElementById('cvModal');
+const cvClose = document.getElementById('cvClose');
+
+const openCv = () => {
+    cvModal?.removeAttribute('inert');
+    cvModal?.classList.add('open');
+    document.body.style.overflow = 'hidden';
+};
+
+const closeCv = () => {
+    cvModal?.classList.remove('open');
+    cvModal?.setAttribute('inert', '');
+    document.body.style.overflow = '';
+};
+
+cvBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    openCv();
+});
+
+cvClose?.addEventListener('click', closeCv);
+
+cvModal?.addEventListener('click', (e) => {
+    if (e.target === cvModal) closeCv();
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && cvModal?.classList.contains('open')) closeCv();
+});
